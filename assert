@@ -1,0 +1,21 @@
+pragma solidity ^0.4.24;
+
+
+
+
+contract TestErrorhandling {
+    string public message;
+    address owner;
+    
+    constructor() public {
+        owner = msg.sender;
+        message = "We try ";
+        
+    }
+
+    function changeMessage(string new_message) public{
+        assert (msg.sender == owner);{
+            message = new_message;
+        }
+    }
+}
